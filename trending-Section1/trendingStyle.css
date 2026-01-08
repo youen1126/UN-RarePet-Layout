@@ -1,0 +1,267 @@
+/* =============== */
+/* 僅作為寬高參考，之後會刪掉 */
+/* =============== */
+
+.section-solid {
+    width: 100%;
+}
+
+/* 上方純色 */
+.section-solid--top {
+    height: 120px;
+    background-color: #FEC631;
+}
+
+/* 下方純色 */
+.section-solid--bottom {
+    height: 160px;
+    background-color: #C9E9F4;
+}
+
+/* Section */
+.trending-section {
+    min-height: auto;
+    padding: 40px 0;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Title */
+.trending-title {
+    position: relative;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.trending-title-zh {
+    position: relative;
+    z-index: 2;
+    font-size: 24px;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+}
+
+.trending-title-en {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    opacity: 0.15;
+    z-index: 1;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+/* Slider wrap */
+.trending-slider-wrap {
+    position: relative;
+    padding: 0;
+}
+
+/* 手機：寬度375 */
+.trending-viewport {
+    max-width: 375px;
+    margin: 0 auto;
+}
+
+/* Track：一次主要看到 1 張卡 */
+.trending-track {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 24px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    padding: 15px 16px 16px;
+    /*scroll-snap-type: x mandatory;  可有可無，看你要不要吸附效果 */
+}
+
+/* 隱藏橫向捲軸造型 */
+.trending-track::-webkit-scrollbar {
+    height: 8px;
+}
+
+/* Card */
+.trending-card {
+    flex: 0 0 auto;
+    width: 164px;
+    height: 260px;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    transition: transform .18s ease, opacity .18s ease, filter .18s ease;
+    scroll-snap-align: center;
+}
+
+/* 左右淡掉用的 class（JS控制） */
+.trending-card.is-dim {
+    opacity: 0.25;
+}
+
+/* Hover 桌機用 */
+.trending-card:hover {
+    transform: translateY(-4px);
+    opacity: 1;
+}
+
+.trending-card:active {
+    transform: translateY(-2px) scale(0.98);
+}
+
+/* 圓框 */
+.trending-card__circle {
+    width: 164px;
+    height: 164px;
+    border-radius: 50%;
+    border: 4px solid #FEC631;
+    display: grid;
+    place-items: center;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    z-index: 3;
+}
+
+.trending-card__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* 黃底版 */
+.trending-card__plate {
+    width: 148px;
+    min-height: 160px;
+    border-radius: 16px;
+    background: #FEC631;
+    margin: -60px auto 0;
+    /* 吃進圓形底部一點 */
+    padding: 75px 12px 8px;
+    /* 上面留給圓形遮住的空間 */
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* 文字 */
+.trending-card__name {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    letter-spacing: 0.02em;
+}
+
+.trending-card__count {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    opacity: .7;
+}
+
+/* 手機版沒有箭頭按鈕 */
+.trending-nav {
+    display: none;
+}
+
+
+/*  桌機版：>= 992px 再放大    */
+
+@media (min-width: 992px) {
+    .trending-section {
+        min-height: 663px;
+        padding: 80px 0;
+    }
+
+    .trending-title {
+        margin-bottom: 90px;
+    }
+
+    .trending-title-zh {
+        font-size: 48px;
+        letter-spacing: 0.125em;
+    }
+
+    .trending-title-en {
+        font-size: 128px;
+        top: 6px;
+        opacity: 0.2;
+    }
+
+    .trending-slider-wrap {
+        padding: 0 10px;
+    }
+
+    .trending-viewport {
+        max-width: 1836px;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .trending-track {
+        gap: 10px;
+        padding: 15px 0 25px;
+        scroll-snap-type: none;
+    }
+
+    .trending-card {
+        width: 306px;
+        height: 359px;
+    }
+
+    .trending-card__circle {
+        width: 258px;
+        height: 258px;
+        border-width: 4px;
+    }
+
+    .trending-card__plate {
+        width: 186px;
+        height: 165px;
+        margin-top: -55px;
+        padding: 70px 16px 5px;
+        border-radius: 16px;
+    }
+
+    .trending-card__name {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .trending-card__count {
+        font-size: 16px;
+    }
+
+    /* 桌機才出現箭頭 */
+    .trending-nav {
+        display: block;
+        position: absolute;
+        top: 75%;
+        width: 68px;
+        height: 68px;
+        border: 0;
+        background: transparent;
+        padding: 0;
+        z-index: 5;
+    }
+
+    .trending-nav--prev {
+        left: clamp(100px, 3vw, 190px);
+    }
+
+    .trending-nav--next {
+        right: clamp(100px, 3vw, 190px);
+    }
+
+    .trending-nav img {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+}

@@ -1,0 +1,226 @@
+/* =============== */
+/* 僅作為寬高參考，之後會刪掉 */
+/* =============== */
+
+.section-solid {
+    width: 100%;
+}
+
+/* 上方純色 */
+.section-solid--top {
+    height: 120px;
+    background-color: #C9E9F4;
+}
+
+
+/* 整個 section */
+.section-cta {
+    padding: 40px 0;
+}
+
+.section-cta__inner {
+    /* 讓內容在手機時保持接近 Figma 寬度 */
+}
+
+.section-cta__list {
+    max-width: 375px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    /* 兩張卡片之間的距離 */
+}
+
+/* 卡片：黃底 / 藍底 351×338 左右 */
+.section-cta__card {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    padding: 80px 16px 80px 16px;
+}
+
+/* 讓內文與按鈕垂直排 */
+.section-cta__content {
+    position: relative;
+    z-index: 1;
+    /* 壓在插畫上層 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+/* 黃底：詐騙/錯假資訊 */
+.section-cta__card--alert {
+    background-color: #F590041A;
+    /* 依照稿微調 */
+}
+
+/* 爆炸框插畫 */
+.section-cta__card--alert::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("./imges/report-ill.png") no-repeat center;
+    background-size: 105%;
+    opacity: 0.35;
+    pointer-events: none;
+}
+
+.section-cta__card--alert::before {
+    transform: none;
+    /* 手機不動 */
+}
+
+/* 藍底：分享投稿 */
+.section-cta__card--contribute {
+    background-color: #85BDDE1A;
+}
+
+/* 畫板插畫 */
+.section-cta__card--contribute::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("./imges/post-ill.png") no-repeat center;
+    background-size: 110%;
+    opacity: 0.35;
+    pointer-events: none;
+}
+
+.section-cta__card--contribute::before {
+    transform: none;
+    /* 手機不動 */
+}
+
+
+/* 文字樣式（手機版） */
+.section-cta__title {
+    font-size: 24px;
+    line-height: 1.2;
+    letter-spacing: 0.05rem;
+    font-weight: 700;
+}
+
+.section-cta__text {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02rem;
+    max-width: 320px;
+}
+
+/* 按鈕：用 Bootstrap btn-warning */
+.section-cta__btn {
+    min-width: 200px;
+    min-height: 53px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02rem;
+    padding: 8px 48px 8px 48px;
+}
+
+/* 卡片 hover 效果 */
+.section-cta__card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    transition: transform .16s ease, box-shadow .16s ease;
+}
+
+@media (min-width: 992px) {
+
+    .section-cta {
+        padding: 40px 0 80px;
+    }
+
+    .section-cta__inner {
+        max-width: 1920px;
+        margin: 0 auto;
+        padding: 0 40px;
+    }
+
+
+    .section-cta__list {
+        max-width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 24px;
+    }
+
+    .section-cta__card {
+        position: relative;
+        width: 908px;
+        max-width: calc((100% - 24px) / 2);
+        max-height: 557px;
+        border-radius: 24px;
+        overflow: hidden;
+        padding: 200px 170px 190px 0px;
+        display: flex;
+        align-items: center;
+        transition: transform .16s ease, box-shadow .16s ease;
+    }
+
+    .section-cta__content {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        max-width: 480px;
+    }
+
+    .section-cta__title {
+        font-size: 28px;
+        line-height: 1.3;
+    }
+
+    .section-cta__text {
+        font-size: 16px;
+        line-height: 1.6;
+        max-width: 480px;
+    }
+
+    .section-cta__btn {
+        min-width: 220px;
+        font-size: 16px;
+    }
+
+    .section-cta__card--alert .section-cta__content {
+        margin-left: auto;
+        transform: translateX(30px);
+        /* 向左拉一點（自己調 px） */
+    }
+
+    .section-cta__card--contribute .section-cta__content {
+        margin-right: auto;
+        transform: translateX(120px);
+        /* 向右拉一點 */
+    }
+
+    /* 背景插畫 */
+
+    .section-cta__card--alert::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: url("./imges/report-ill.png") no-repeat left center;
+        background-size: 85%;
+        pointer-events: none;
+        opacity: 1;
+        transform: translateX(15%);
+    }
+
+    .section-cta__card--contribute::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: url("./imges/post-ill.png") no-repeat right center;
+        background-size: 85%;
+        pointer-events: none;
+        opacity: 1;
+        transform: translateX(-10%);
+    }
+
+}
