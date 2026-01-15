@@ -181,7 +181,7 @@
 
 /*  桌機版：>= 992px 再放大    */
 
-@media (min-width: 992px) {
+@media (min-width: 700px) {
     .trending-section {
         min-height: 663px;
         padding: 80px 0;

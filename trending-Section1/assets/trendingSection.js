@@ -16,13 +16,29 @@ document.addEventListener('DOMContentLoaded', () => {
         },
 
         breakpoints: {
-            // 平板
-            768: {
-                slidesPerView: 2.5,
+            800: {
+                slidesPerView: 3.2,
                 spaceBetween: 20,
                 centeredSlides: false,
             },
-            992: {
+            1000: {
+                slidesPerView: 3.4,
+                spaceBetween: 24,
+                centeredSlides: false,
+            },
+            1300: {
+                slidesPerView: 4.5,
+                spaceBetween: 20,
+                centeredSlides: false,
+            },
+            1500: {
+                slidesPerView: 4.7,
+                spaceBetween: 24,
+                slidesPerGroup: 1,
+                centeredSlides: false,
+                loop: true,
+            },
+            1600: {
                 slidesPerView: 6,
                 spaceBetween: 24,
                 slidesPerGroup: 1,
