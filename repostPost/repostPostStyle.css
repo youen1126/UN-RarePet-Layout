@@ -40,14 +40,14 @@
 }
 
 /* 讓內文與按鈕垂直排 */
-.section-cta__content {
+.section-cta-alter__content {
     position: relative;
     z-index: 1;
-    /* 壓在插畫上層 */
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;
+    gap: 16px;
+    max-width: 480px;
 }
 
 /* 黃底：詐騙/錯假資訊 */
@@ -161,14 +161,25 @@
         transition: transform .16s ease, box-shadow .16s ease;
     }
 
-    .section-cta__content {
+    .feature-cardbg {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: url("./imges/report-ill.png") center / contain no-repeat;
+        background-size: 85%;
+        opacity: 1;
+        pointer-events: none;
+    }
+
+    .section-cta-alter__content {
         position: relative;
-        z-index: 1;
+        max-width: 60%;
+        margin-left: auto;
+        /* 桌機時靠右*/
+        padding: 2rem;
         display: flex;
         flex-direction: column;
-        align-items: center;
-        gap: 16px;
-        max-width: 480px;
+        gap: 1rem;
     }
 
     .section-cta__title {
