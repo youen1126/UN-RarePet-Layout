@@ -18,12 +18,18 @@
     background-color: #C9E9F4;
 }
 
-/* Section */
+/* 熱門分類Section */
 .trending-section {
     min-height: auto;
-    padding: 40px 0;
-    overflow: hidden;
+    padding: 30px 0;
+    /* overflow-y: hidden; */
     position: relative;
+}
+
+.container-slider-zone {
+    max-width: 375px;
+    margin: 0 auto;
+    padding: 0 0 20px 0;
 }
 
 /* Title */
@@ -56,37 +62,16 @@
     pointer-events: none;
 }
 
-/* Slider wrap */
-.trending-slider-wrap {
-    position: relative;
-    padding: 0;
-}
-
-/* 手機：寬度375 */
-.trending-viewport {
-    max-width: 375px;
-    margin: 0 auto;
-}
-
-/* Track：一次主要看到 1 張卡 */
-.trending-track {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 24px;
-    overflow-x: auto;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
-    padding: 15px 16px 16px;
-    /*scroll-snap-type: x mandatory;  可有可無，看你要不要吸附效果 */
-}
-
-/* 隱藏橫向捲軸造型 */
-.trending-track::-webkit-scrollbar {
-    height: 8px;
+.trending-swiper {
+    padding: 20px 0 50px 0;
 }
 
 /* Card */
+
+
 .trending-card {
+    opacity: 1;
+    filter: none;
     flex: 0 0 auto;
     width: 164px;
     height: 260px;
@@ -94,12 +79,35 @@
     color: inherit;
     position: relative;
     transition: transform .18s ease, opacity .18s ease, filter .18s ease;
-    scroll-snap-align: center;
 }
 
-/* 左右淡掉用的 class（JS控制） */
+.trending-card__link {
+    display: block;
+    padding: 15px 0 40px 0;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 被 JS 加上 is-dim 的 → 變暗 */
 .trending-card.is-dim {
-    opacity: 0.25;
+    opacity: .2;
+    filter: grayscale(20%);
+}
+
+.swiper-slide {
+    transition: opacity 0.3s ease;
+    /* 讓透明度切換有動畫 */
+}
+
+.trending-card.swiper-slide-active {
+    transform: translateY(-2px);
+}
+
+/* 活動中的那一組，可以稍微往上浮一點（可選） */
+.trending-card:not(.swiper-slide-active):hover {
+    filter: grayscale(10%);
 }
 
 /* Hover 桌機用 */
@@ -179,6 +187,11 @@
         padding: 80px 0;
     }
 
+    .container-slider-zone {
+        max-width: 100%;
+        padding: 0 0 20px 0;
+    }
+
     .trending-title {
         margin-bottom: 90px;
     }
@@ -192,22 +205,6 @@
         font-size: 128px;
         top: 6px;
         opacity: 0.2;
-    }
-
-    .trending-slider-wrap {
-        padding: 0 10px;
-    }
-
-    .trending-viewport {
-        max-width: 1836px;
-        margin: 0 auto;
-        position: relative;
-    }
-
-    .trending-track {
-        gap: 10px;
-        padding: 15px 0 25px;
-        scroll-snap-type: none;
     }
 
     .trending-card {
