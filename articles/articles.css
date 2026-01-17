@@ -100,10 +100,16 @@
 }
 
 .rp-filter-btn {
-    border-radius: 5px;
-    background-color: #ffe08a;
-    border: none;
+    display: block;
+    width: 100%;
+    /* 滿版 */
+    padding: 10px 16px;
+    /* 大一點，好點 */
+    font-size: 15px;
     font-weight: 700;
+    border-radius: 5px;
+    border: none;
+    background: #ffe08a;
     color: #000;
 }
 
@@ -121,10 +127,9 @@
     .rp-filter-btn {
         padding: 6px 40px 6px 40px;
         width: fit-content;
-        /* 桌機比較薄 */
         font-size: 16px;
         border-radius: 5px;
-        /* 保持，但變更平衡 */
+        white-space: nowrap;
     }
 
 
