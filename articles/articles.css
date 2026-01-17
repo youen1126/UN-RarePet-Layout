@@ -1,0 +1,100 @@
+.section-solid {
+    width: 100%;
+}
+
+/* 上方純色 */
+.section-solid--top {
+    height: 120px;
+    background-color: #FEC631;
+}
+
+/* 下方純色 */
+.section-solid--bottom {
+    height: 160px;
+    background-color: #C9E9F4;
+}
+
+/* 僅作為寬高參考，之後會刪掉 */
+/* =============== */
+
+/* 整張卡片 */
+.rp-article-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow:
+        0 0 7px rgba(0, 0, 0, 0.08),
+        0 0 15px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 上半部：tag + 圖片 */
+.rp-article-media {
+    padding: 8px 8px 0;
+}
+
+/* 圖片 */
+.rp-article-img {
+    width: 100%;
+    height: 105px;
+    object-fit: cover;
+}
+
+/* tag（防詐騙） */
+.rp-article-tag {
+    display: inline-block;
+    padding: 4px 15px;
+    margin: 4px auto 10px;
+
+    width: 89px;
+
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 4px;
+    text-align: center;
+    display: block;
+}
+
+/* 下半部文字區 */
+.rp-article-body {
+    padding: 15px 12px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* 日期 */
+.rp-article-date {
+    font-weight: 700;
+    font-size: 14px;
+    color: #2F6382;
+    margin: 0;
+}
+
+/* 標題 */
+.rp-article-title {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin: 0 0 4px;
+}
+
+/* 描述 */
+.rp-article-desc {
+    font-size: 12px;
+    color: #666666;
+    line-height: 1.5;
+    margin: 0 0 6px;
+}
+
+/* 繼續閱讀 */
+.rp-article-link {
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.rp-article-link:hover {
+    text-decoration: underline;
+}
