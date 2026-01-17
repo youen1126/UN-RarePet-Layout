@@ -21,32 +21,34 @@
     </header>
 
     <section class="rarepet-info-section pt-1 pb-5">
-        <div class="container pb-5">
+        <div class="container pb-5 ">
             <!-- 切換按鈕 -->
-            <div class="row g-2 g-md-3 mb-3">
-                <div class="col-6 col-lg-3">
-                    <button type="button" class="btn btn-outline-warning w-100 rarepet-filter-btn active"
-                        data-filter="all">
+            <div class="row justify-content-center g-2 g-md-5 mb-4">
+                <div class="col-6 col-md-3 col-lg-auto text-center">
+                    <button class="btn rp-filter-btn active" data-filter="all">
                         全部
                     </button>
                 </div>
-                <div class="col-6 col-lg-3">
-                    <button type="button" class="btn btn-outline-warning w-100 rarepet-filter-btn" data-filter="event">
+
+                <div class="col-6 col-md-3 col-lg-auto text-center">
+                    <button class="btn rp-filter-btn" data-filter="rare">
                         稀寵資訊
                     </button>
                 </div>
-                <div class="col-6 col-lg-3">
-                    <button type="button" class="btn btn-outline-warning w-100 rarepet-filter-btn"
-                        data-filter="anti-scam">
-                        防詐騙
-                    </button>
-                </div>
-                <div class="col-6 col-lg-3">
-                    <button type="button" class="btn btn-outline-warning w-100 rarepet-filter-btn" data-filter="tips">
+
+                <div class="col-6 col-md-3 col-lg-auto text-center">
+                    <button class="btn rp-filter-btn" data-filter="event">
                         活動資訊
                     </button>
                 </div>
+
+                <div class="col-6 col-md-3 col-lg-auto text-center">
+                    <button class="btn rp-filter-btn" data-filter="anti-scam">
+                        防詐騙
+                    </button>
+                </div>
             </div>
+
 
             <!-- 卡片列表 Grid -->
             <!-- data-type= anti-scam  event tips-->

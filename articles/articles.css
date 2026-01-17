@@ -98,3 +98,103 @@
 .rp-article-link:hover {
     text-decoration: underline;
 }
+
+.rp-filter-btn {
+    border-radius: 5px;
+    background-color: #ffe08a;
+    border: none;
+    font-weight: 700;
+    color: #000;
+}
+
+.rp-filter-btn.active {
+    background-color: #ffcd00;
+}
+
+.rp-filter-btn:hover {
+    background-color: #ffcd00;
+}
+
+/* 桌機版樣式 */
+@media (min-width: 992px) {
+
+    .rp-filter-btn {
+        padding: 6px 40px 6px 40px;
+        width: fit-content;
+        /* 桌機比較薄 */
+        font-size: 16px;
+        border-radius: 5px;
+        /* 保持，但變更平衡 */
+    }
+
+
+    .rp-article-card {
+        border-radius: 16px;
+        padding: 10px 20px 30px 20px;
+        box-shadow:
+            0 4px 18px rgba(0, 0, 0, 0.06),
+            0 10px 32px rgba(0, 0, 0, 0.04);
+        transition: box-shadow .18s ease, transform .18s ease;
+    }
+
+    .rp-article-card:hover {
+        transform: translateY(-2px);
+        box-shadow:
+            0 8px 24px rgba(0, 0, 0, 0.10),
+            0 16px 48px rgba(0, 0, 0, 0.06);
+    }
+
+    .rp-article-media {
+        position: relative;
+        padding: 18px 18px 0;
+    }
+
+    /* 圖片在桌機可以再高一點 */
+    .rp-article-img {
+        height: 208px;
+        border-radius: 1px;
+    }
+
+    /* 標籤改成疊在左上角 */
+    .rp-article-tag {
+        position: absolute;
+        top: 8px;
+        /* 距離卡片上緣 */
+        left: 6px;
+        /* 距離卡片左緣 */
+        margin: 0;
+        padding: 4px 12px;
+        font-size: 14px;
+        font-weight: 700;
+        border-radius: 4px;
+        display: inline-block;
+        z-index: 2;
+    }
+
+    /* 下半部文字區桌機版稍微放寬一點 */
+    .rp-article-body {
+        padding: 18px 18px 18px;
+        gap: 6px;
+    }
+
+    .rp-article-date {
+        font-size: 15px;
+    }
+
+    .rp-article-title {
+        font-size: 18px;
+        line-height: 1.5;
+        margin-bottom: 6px;
+    }
+
+    .rp-article-desc {
+        font-size: 14px;
+        line-height: 1.7;
+        margin-bottom: 10px;
+    }
+
+    .rp-article-link {
+        font-size: 15px;
+        font-weight: 600;
+    }
+}
