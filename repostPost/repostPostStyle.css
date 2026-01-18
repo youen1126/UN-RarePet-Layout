@@ -1,25 +1,17 @@
 /* =============== */
 /* 僅作為寬高參考，之後會刪掉 */
 /* =============== */
-
-.section-solid {
-    width: 100%;
-}
-
 /* 上方純色 */
 .section-solid--top {
-    height: 120px;
+    height: 40px;
+    width: 100%;
     background-color: #C9E9F4;
 }
 
 
 /* 整個 section */
 .section-cta {
-    padding: 40px 0;
-}
-
-.section-cta__inner {
-    /* 讓內容在手機時保持接近 Figma 寬度 */
+    padding: 40px 15px 40px 15px;
 }
 
 .section-cta__list {
@@ -28,10 +20,10 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
-    /* 兩張卡片之間的距離 */
+
 }
 
-/* 卡片：黃底 / 藍底 351×338 左右 */
+/* 卡片：黃底 / 藍底  */
 .section-cta__card {
     position: relative;
     border-radius: 16px;
@@ -47,13 +39,21 @@
     flex-direction: column;
     align-items: center;
     gap: 16px;
-    max-width: 480px;
 }
 
-/* 黃底：詐騙/錯假資訊 */
+/* 讓內文與按鈕垂直排 */
+.section-cta-contribute__content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+/* 黃底 */
 .section-cta__card--alert {
     background-color: #F590041A;
-    /* 依照稿微調 */
 }
 
 /* 爆炸框插畫 */
@@ -69,10 +69,9 @@
 
 .section-cta__card--alert::before {
     transform: none;
-    /* 手機不動 */
 }
 
-/* 藍底：分享投稿 */
+/* 藍底 */
 .section-cta__card--contribute {
     background-color: #85BDDE1A;
 }
@@ -90,7 +89,6 @@
 
 .section-cta__card--contribute::before {
     transform: none;
-    /* 手機不動 */
 }
 
 
@@ -107,6 +105,7 @@
     line-height: 1.5;
     letter-spacing: 0.02rem;
     max-width: 320px;
+    text-align: center;
 }
 
 /* 按鈕：用 Bootstrap btn-warning */
@@ -127,111 +126,174 @@
     transition: transform .16s ease, box-shadow .16s ease;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1100px) {
 
-    .section-cta {
-        padding: 40px 0 80px;
-    }
-
-    .section-cta__inner {
-        max-width: 1920px;
-        margin: 0 auto;
-        padding: 0 40px;
-    }
-
-
+    /* 整個 CTA 區：兩張卡水平排，中間一條版心，左右自然留白 */
     .section-cta__list {
-        max-width: 100%;
-        display: flex;
+        max-width: 1650px;
+        margin: 0 auto;
         flex-direction: row;
         justify-content: center;
-        gap: 24px;
+        align-items: stretch;
+        gap: 32px;
     }
 
+    /* 共用：卡片高度大致固定，左右靠 padding 控 */
     .section-cta__card {
-        position: relative;
-        width: 908px;
-        max-width: calc((100% - 24px) / 2);
-        max-height: 557px;
+        flex: 1 1 0;
+        min-height: 260px;
         border-radius: 24px;
-        overflow: hidden;
-        padding: 200px 170px 190px 0px;
-        display: flex;
-        align-items: center;
-        transition: transform .16s ease, box-shadow .16s ease;
+        padding-top: 72px;
+        padding-bottom: 72px;
     }
 
-    .feature-cardbg {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: url("./imges/report-ill.png") center / contain no-repeat;
-        background-size: 85%;
-        opacity: 1;
-        pointer-events: none;
+    /* 黃卡：左邊多一塊留白，內容偏右（往中間聚） */
+    .section-cta__card--alert {
+        /* 上  右   下   左  （左邊故意多一點） */
+        padding: 100px 5% 180px 15%;
     }
 
-    .section-cta-alter__content {
+    /* 藍卡：右邊多一塊留白，內容偏左（往中間聚） */
+    .section-cta__card--contribute {
+        padding: 100px 15% 180px 5%;
+    }
+
+    /* 兩張卡片的內容區：跟著卡片縮放，不再用 right 推 */
+    .section-cta-alter__content,
+    .section-cta-contribute__content {
         position: relative;
-        max-width: 60%;
-        margin-left: auto;
-        /* 桌機時靠右*/
-        padding: 2rem;
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
+        z-index: 1;
+        max-width: 700px;
+        /* 內容最多寬到這裡 */
+        width: 100%;
+        /* 卡片變窄時可一起縮 */
+        margin: 0;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+        transform: translateY(50px);
     }
 
     .section-cta__title {
-        font-size: 28px;
-        line-height: 1.3;
+        font-size: 25px;
+        line-height: 1.2;
+        letter-spacing: 0.02rem;
+        font-style: bold;
     }
 
     .section-cta__text {
-        font-size: 16px;
+        font-size: 13px;
         line-height: 1.6;
-        max-width: 480px;
+        letter-spacing: 0.02rem;
+        text-align: center;
+        max-width: 420px;
     }
 
     .section-cta__btn {
-        min-width: 220px;
-        font-size: 16px;
-    }
-
-    .section-cta__card--alert .section-cta__content {
-        margin-left: auto;
-        transform: translateX(30px);
-        /* 向左拉一點（自己調 px） */
-    }
-
-    .section-cta__card--contribute .section-cta__content {
-        margin-right: auto;
-        transform: translateX(120px);
-        /* 向右拉一點 */
-    }
-
-    /* 背景插畫 */
-
-    .section-cta__card--alert::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: url("./imges/report-ill.png") no-repeat left center;
-        background-size: 85%;
-        pointer-events: none;
-        opacity: 1;
-        transform: translateX(15%);
+        min-width: 180px;
+        min-height: 43px;
+        font-size: 15px;
+        padding: 10px 56px;
     }
 
     .section-cta__card--contribute::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: url("./imges/post-ill.png") no-repeat right center;
-        background-size: 85%;
-        pointer-events: none;
+        background-position: left;
+        background-size: 75%;
         opacity: 1;
-        transform: translateX(-10%);
+        transform: translateX(60px);
     }
 
+    .section-cta__card--alert::before {
+        background-position: right;
+        background-size: 78%;
+        opacity: 1;
+        transform: translateX(-20px);
+    }
+}
+
+
+
+@media (min-width: 1450px) {
+
+    /* 整個 CTA 區：兩張卡水平排，中間一條版心，左右自然留白 */
+    .section-cta__list {
+        max-width: 1650px;
+        margin: 0 auto;
+        flex-direction: row;
+        justify-content: center;
+        align-items: stretch;
+        gap: 32px;
+    }
+
+    /* 共用：卡片高度大致固定，左右靠 padding 控 */
+    .section-cta__card {
+        flex: 1 1 0;
+        min-height: 260px;
+        border-radius: 24px;
+        padding-top: 72px;
+        padding-bottom: 72px;
+    }
+
+    /* 黃卡：左邊多一塊留白，內容偏右（往中間聚） */
+    .section-cta__card--alert {
+        /* 上  右   下   左  （左邊故意多一點） */
+        padding: 200px 8% 180px 18%;
+    }
+
+    /* 藍卡：右邊多一塊留白，內容偏左（往中間聚） */
+    .section-cta__card--contribute {
+        padding: 200px 18% 180px 8%;
+    }
+
+    /* 兩張卡片的內容區：跟著卡片縮放，不再用 right 推 */
+    .section-cta-alter__content,
+    .section-cta-contribute__content {
+        position: relative;
+        z-index: 1;
+        max-width: 700px;
+        /* 內容最多寬到這裡 */
+        width: 100%;
+        /* 卡片變窄時可一起縮 */
+        margin: 0;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+        transform: translateY(0px);
+    }
+
+    .section-cta__title {
+        font-size: 30px;
+        line-height: 1.2;
+        letter-spacing: 0.02rem;
+        font-style: bold;
+    }
+
+    .section-cta__text {
+        font-size: 13px;
+        line-height: 1.6;
+        letter-spacing: 0.02rem;
+        text-align: center;
+        max-width: 420px;
+    }
+
+    .section-cta__btn {
+        min-width: 230px;
+        min-height: 56px;
+        font-size: 17px;
+        padding: 10px 56px;
+    }
+
+    .section-cta__card--contribute::before {
+        background-position: left;
+        background-size: 70%;
+        opacity: 1;
+        transform: translateX(60px);
+    }
+
+    .section-cta__card--alert::before {
+        background-position: right;
+        background-size: 73%;
+        opacity: 1;
+        transform: translateX(-20px);
+    }
 }
